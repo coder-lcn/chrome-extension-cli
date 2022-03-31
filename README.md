@@ -1,1 +1,1 @@
-# chrome-extension-cli
+# chrome-extensions-cli

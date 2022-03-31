@@ -1,0 +1,17 @@
+{
+  "name": "{{extensionName}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "chrome-extension start",
+    "build": "chrome-extension build"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.180",
+    "@types/node": "17.0.23"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
