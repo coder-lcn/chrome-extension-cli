@@ -18,14 +18,18 @@ process.env.cwd = cwd;
 switch (scriptName) {
   case 'start': {
     process.env.NODE_ENV = 'development';
-    const pc = exec('npm start', { cwd: __dirname });
+    const pc = exec('npm start', { cwd: __dirname }, err => {
+      err && console.log(err);
+    });
     pc.stdout.on('data', console.log);
     pc.stdout.on('error', console.error);
   }
     break;
   case 'build': {
     process.env.NODE_ENV = 'production';
-    const pc = exec('npm run build', { cwd: __dirname });
+    const pc = exec('npm run build', { cwd: __dirname }, err => {
+      err && console.log(err);
+    });
     pc.stdout.on('data', console.log);
     pc.stdout.on('error', console.error);
   }
