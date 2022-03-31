@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { mkdir } = require('fs');
+
 let extensionName = process.argv.slice(2)[0]
 if (!extensionName) {
   throw new Error('extension name is required');
@@ -18,7 +19,7 @@ mkdir(extensionName, (err) => {
   if (err) throw err;
 
   copy(inDir, cwd, vars, (err) => {
-    if (err) throw err
+    if (err) throw err;
     console.log('✨  Project created successfully');
     console.log('start install dependencies...');
 
@@ -28,5 +29,3 @@ mkdir(extensionName, (err) => {
     });
   });
 });
-
-

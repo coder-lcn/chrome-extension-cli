@@ -36,7 +36,6 @@ module.exports = {
       ],
     }),
     new webpack.ProgressPlugin(percentage => {
-      console.log(percentage, 'percentage');
       if (percentage === 1) {
         reload();
       }
