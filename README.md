@@ -9,13 +9,19 @@ Google Extension Development Scaffolding
 
 ## Usage
 
-### Step1 create a extension
+### install
+
+```shell
+npm install -g chrome-extensions-cli
+```
+
+### create a extension
 
 ```shell
 create-chrome-extension <project-name>
 ```
 
-### Run or Build
+### run or build
 
 ```shell
 # run extension
