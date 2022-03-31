@@ -1,0 +1,14 @@
+language: node_js
+os: linux
+dist: xenial
+node_js:
+  - 16
+script:
+  - npm run test
+depoly:
+  provider: npm
+  email: "$NPM _EMAIL"
+  api_token: "$NPM_API_TOKEN"
+  cleanup: true
+  on:
+    branch: main
