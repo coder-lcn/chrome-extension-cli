@@ -14,18 +14,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coder-lcn/clear-page-content.git"
+    "url": "git+https://github.com/coder-lcn/chrome-extensions-cli.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/coder-lcn/clear-page-content/issues"
+    "url": "https://github.com/coder-lcn/chrome-extensions-cli/issues"
   },
   "browserslist": [
     "defaults"
   ],
-  "homepage": "https://github.com/coder-lcn/clear-page-content#readme",
+  "homepage": "https://github.com/coder-lcn/chrome-extensions-cli#readme",
   "dependencies": {
     "copy-template-dir": "^1.4.0",
     "@types/chrome": "^0.0.178",
