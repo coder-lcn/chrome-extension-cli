@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "create-chrome-extension": "create.js",
-    "chrome-extension": "scripts.js"
+    "create-chrome-extension": "./scripts/create.js",
+    "chrome-extension": "./scripts/scripts.js"
   },
   "scripts": {
     "start": "webpack --watch",

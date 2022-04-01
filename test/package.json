@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "node ../scripts/create.js temp test",
+    "pretest": "rimraf temp"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
+}

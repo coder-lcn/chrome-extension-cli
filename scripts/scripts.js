@@ -9,7 +9,7 @@ if (!scriptName) {
 const cwd = process.cwd();
 const path = require('path');
 const srouce = path.resolve(cwd, 'src');
-const { exec } = require('child_process')
+const { exec } = require('child_process');
 
 process.env.source = srouce
 process.env.buildDir = path.resolve(cwd, 'dist');

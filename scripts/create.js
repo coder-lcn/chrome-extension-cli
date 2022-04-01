@@ -2,7 +2,8 @@
 
 const { mkdir } = require('fs');
 
-let extensionName = process.argv.slice(2)[0]
+let [extensionName, test] = process.argv.slice(2)
+const __TEST__ = test === 'test';
 if (!extensionName) {
   throw new Error('extension name is required');
 }
@@ -11,8 +12,12 @@ extensionName = extensionName.trim().toLowerCase();
 const path = require('path');
 const cwd = path.resolve(process.cwd(), extensionName);
 const copy = require('copy-template-dir');
-const vars = { extensionName };
-const inDir = path.join(__dirname, 'templates');
+const vars = {
+  extensionName,
+  "start": __TEST__ ? "../../scripts/scripts.js start" : "chrome-extension start",
+  "build": __TEST__ ? "../../scripts/scripts.js build" : "chrome-extension build"
+};
+const inDir = path.join(__dirname, '../', 'templates');
 const { exec } = require('child_process');
 
 mkdir(extensionName, (err) => {

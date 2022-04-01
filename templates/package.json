@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "chrome-extension start",
-    "build": "chrome-extension build"
+    "start": "{{start}}",
+    "build": "{{build}}"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.180",

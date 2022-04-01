@@ -1,7 +1,7 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require('webpack');
-const { reload } = require('./reload');
+const { reload } = require('./scripts/reload');
 
 const source = process.env.source;
 const buildDir = process.env.buildDir;
