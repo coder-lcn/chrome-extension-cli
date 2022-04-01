@@ -10,6 +10,7 @@ const cwd = process.cwd();
 const path = require('path');
 const srouce = path.resolve(cwd, 'src');
 const { exec } = require('child_process');
+const filterLog = require('./filterLog');
 
 process.env.source = srouce
 process.env.buildDir = path.resolve(cwd, 'dist');
@@ -21,7 +22,7 @@ switch (scriptName) {
     const pc = exec('npm start', { cwd: __dirname }, err => {
       err && console.log(err);
     });
-    pc.stdout.on('data', console.log);
+    pc.stdout.on('data', filterLog);
     pc.stdout.on('error', console.error);
   }
     break;
@@ -30,7 +31,7 @@ switch (scriptName) {
     const pc = exec('npm run build', { cwd: __dirname }, err => {
       err && console.log(err);
     });
-    pc.stdout.on('data', console.log);
+    pc.stdout.on('data', filterLog);
     pc.stdout.on('error', console.error);
   }
     break;

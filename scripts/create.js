@@ -26,7 +26,7 @@ mkdir(extensionName, (err) => {
   copy(inDir, cwd, vars, (err) => {
     if (err) throw err;
     console.log('✨  Project created successfully');
-    console.log('start install dependencies...');
+    console.log('install dependencies...');
 
     exec('npm install', { cwd }, (err, out) => {
       if (err) throw err
