@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-let scriptName = process.argv.slice(2)[0];
+let [scriptName, debug] = process.argv.slice(2);
+process.env.debug = debug === 'debug';
 
 if (!scriptName) {
   throw new Error('script name is required');
