@@ -6,7 +6,7 @@ module.exports = (log) => {
   //   return;
   // }
 
-  if (log.indexOf('chrome-extension-cli') !== -1) return;
+  if (log.indexOf('chrome-extensions-cli') !== -1) return;
 
   if (process.env.NODE_ENV === 'development') {
     if (log.indexOf('compiled successfully') !== -1) {
