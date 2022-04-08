@@ -12,7 +12,9 @@ Google Extension Development Scaffolding
 ### install
 
 ```shell
-npm install -g chrome-extensions-cli
+npm install chrome-extensions-cli -D
+# or
+yarn add chrome-extensions-cli -D
 ```
 
 ### create a extension

@@ -21,17 +21,17 @@ const init = async () => {
   });
 
   chromeExtensionPage = await browser.newPage();
-  await chromeExtensionPage.goto("chrome://extensions/");
-  await chromeExtensionPage.evaluate(() => {
-    // open development mode
-    document.querySelector("body > extensions-manager").shadowRoot.querySelector("extensions-toolbar").shadowRoot.querySelector("#devMode").click();
-  });
-
   chromeExtensionPage.on('console', async (msg) => {
     const msgArgs = msg.args();
     for (let i = 0; i < msgArgs.length; ++i) {
       console.log(await msgArgs[i].jsonValue());
     }
+  });
+
+  await chromeExtensionPage.goto("chrome://extensions/");
+  await chromeExtensionPage.evaluate(() => {
+    // open development mode
+    document.querySelector("body > extensions-manager").shadowRoot.querySelector("extensions-toolbar").shadowRoot.querySelector("#devMode").click();
   });
 }
 
@@ -45,11 +45,12 @@ const reload = () => {
     const target = extensionsConfig.find((item) => item.name === name);
 
     if (target) {
-      document
+      const card = document
         .querySelector("extensions-manager")
         .shadowRoot.querySelector("extensions-item-list")
-        .shadowRoot.querySelector(`extensions-item[id="${target.id}"]`)
-        .shadowRoot.querySelector("cr-icon-button")
+        .shadowRoot.querySelector(`extensions-item[id="${target.id}"]`);
+
+      card.shadowRoot.querySelector('cr-icon-button[id="dev-reload-button"]')
         .click();
     } else {
       console.error("plugin is not found");

@@ -26,6 +26,7 @@
   ],
   "homepage": "https://github.com/coder-lcn/chrome-extensions-cli#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "copy-template-dir": "^1.4.0",
     "copy-webpack-plugin": "^10.2.0",
