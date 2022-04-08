@@ -7,7 +7,6 @@ const cwd = process.env.cwd;
 const packageJSON = require(path.resolve(cwd, 'package.json'));
 const name = packageJSON.name;
 
-
 const init = async () => {
   const StayFocusd = path.resolve(cwd, "./dist");
 
@@ -38,14 +37,6 @@ const init = async () => {
 
 init();
 
-const reportError = () => {
-  const error = document.querySelector('extensions-manager')
-    .shadowRoot.querySelector('#viewManager')
-    .shadowRoot.querySelector('extensions-error-page')
-    .shadowRoot.querySelector('.error-message').textContent;
-  window.console.log(error);
-}
-
 const reload = () => {
   if (!chromeExtensionPage) return;
 
@@ -61,19 +52,6 @@ const reload = () => {
 
       card.shadowRoot.querySelector('cr-icon-button[id="dev-reload-button"]')
         .click();
-
-      const buttonContainer = card.shadowRoot.querySelector('#button-strip > div:first-child');
-
-      if (buttonContainer) {
-        new MutationObserver(() => {
-          if (buttonContainer.childElementCount >= 3) {
-            buttonContainer.children[2].click();
-            // reportError();
-          }
-        }).observe(buttonContainer, { childList: true });
-      } else {
-        console.error("buttonContainer is not found");
-      }
     } else {
       console.error("plugin is not found");
     }
